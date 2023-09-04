@@ -1,0 +1,21 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+  <h1>login</h1>
+  <br>
+  <form method="POST" action="{% url 'store'%}">
+      {% csrf_token %}
+          <div class="mb-3">
+            <input type="text" class="form-control" name="username" placeholder="user name" required>
+          </div>
+          <br>
+          <div class="mb-3">
+            <input type="password" class="form-control" name="password" placeholder="password" required>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-secondary">login</button>
+  </form>
+</div>
+{% endblock content %}
